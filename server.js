@@ -1,13 +1,7 @@
-const express= require('express');
+const app=require('./index');
 
-const server= express();
+const PORT=process.env.PORT||3000;
 
-server.get('/',(req,res)=>{
-    res.send("Welcome to My Application")
+app.listen(PORT,()=>{
+    console.log(`Server is Running on port ${PORT}`);
 })
-
-server.get('/users',(req,res)=>{
-    res.send([{id:1,name:"xx"},{id:2,name:"yy"},{id:3,name:"zz"}])
-})
-
-server.listen(5000,()=>console.log("Server Started"))
